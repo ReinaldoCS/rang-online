@@ -11,7 +11,11 @@ module.exports = {
       'green-500': '#36B336',
       'yellow-500': '#FFB84D',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: 'Roboto, sans-serif',
+      },
+    },
   },
   plugins: [],
 };
