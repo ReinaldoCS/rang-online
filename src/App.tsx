@@ -1,7 +1,13 @@
 import './index.css';
 
+import { Header } from './Components/Header';
+
 function App() {
-  return <h1 className="text-red-600">Hello word!!!</h1>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
