@@ -1,3 +1,4 @@
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import React, { useState } from 'react';
 
 import { Card, ICardProps } from './Card';
@@ -5,6 +6,8 @@ import { SearchInput } from './SearchInput';
 
 export function LunchesList() {
   const [search, setSearch] = useState('');
+
+  const [parent] = useAutoAnimate<HTMLUListElement>(/* optional config */);
 
   // Filtra busta considerando o nome e a descrição do lanche
   const filterLunches = lunches.filter(
@@ -21,7 +24,10 @@ export function LunchesList() {
     <section className="flex flex-col items-center justify-center">
       <SearchInput onChange={handleChangeSearch} value={search} />
 
-      <div className="flex flex-col items-center justify-center max-w-5xl sm:grid sm:grid-cols-[20rem_repeat(auto-fill,_20rem)] sm:w-11/12 sm:gap-x-4 sm:gap-2 md:gap-8 md:mt-16">
+      <ul
+        ref={parent}
+        className="flex flex-col items-center justify-center max-w-5xl sm:grid sm:grid-cols-[20rem_repeat(auto-fill,_20rem)] sm:w-11/12 sm:gap-x-4 sm:gap-2 md:gap-8 md:mt-16"
+      >
         {filterLunches.map((lunch) => (
           <Card
             key={lunch.name}
@@ -31,7 +37,7 @@ export function LunchesList() {
             img={lunch.img}
           />
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

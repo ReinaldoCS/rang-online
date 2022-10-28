@@ -11,7 +11,7 @@ export interface ICardProps {
 
 export function Card({ name, description, value, img }: ICardProps) {
   return (
-    <div className="w-11/12 h-32 bg-white flex items-center justify-start rounded-lg mt-4 md:w-80 md:flex-col md:h-full md:mt-0">
+    <li className="w-11/12 h-32 bg-white flex items-center justify-start rounded-lg mt-4 md:w-80 md:flex-col md:h-full md:mt-0">
       <div className="flex items-center justify-center bg-yellow-500 bg rounded-l-lg h-32 min-w-[8rem] p-2 md:rounded-t-lg md:rounded-bl-none md:min-w-[20rem] md:h-48">
         <img src={img} alt={name} className="max-w-[90%] max-h-[90%]" />
       </div>
@@ -35,6 +35,6 @@ export function Card({ name, description, value, img }: ICardProps) {
           </button>
         </div>
       </div>
-    </div>
+    </li>
   );
 }
