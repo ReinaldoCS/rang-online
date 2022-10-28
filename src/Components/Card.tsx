@@ -1,5 +1,7 @@
 import { Plus } from 'phosphor-react';
 
+import { formatPrice } from '../utils/formatValue';
+
 export interface ICardProps {
   name: string;
   description: string;
@@ -20,7 +22,7 @@ export function Card({ name, description, value, img }: ICardProps) {
         </span>
         <div className="flex items-center justify-between mt-2 md:flex-col md:items-start md:mt-4">
           <span className="block text-green-500 md:text-2xl">
-            R$ <strong>{value}</strong>
+            <strong>{formatPrice(value)}</strong>
           </span>
 
           <button className="md:flex md:bg-green-500 md:w-full md:items-center md:justify-between md:rounded-lg md:p-2 md:mt-7">
