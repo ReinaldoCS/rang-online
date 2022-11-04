@@ -1,15 +1,15 @@
 import { Plus } from 'phosphor-react';
 
+import { useCart } from '../hook/useCart';
 import { formatPrice } from '../utils/formatValue';
 
-export interface ICardProps {
-  name: string;
-  description: string;
-  value: number;
-  img: string;
-}
+export function Card({ name, description, value, id, img }: IProduct) {
+  const { addProduct } = useCart();
 
-export function Card({ name, description, value, img }: ICardProps) {
+  function handleOnClick(id: number) {
+    addProduct(id);
+  }
+
   return (
     <li className="w-11/12 h-32 bg-white flex items-center justify-start rounded-lg mt-4 md:w-80 md:flex-col md:h-full md:mt-0">
       <div className="flex items-center justify-center bg-yellow-500 bg rounded-l-lg h-32 min-w-[8rem] p-2 md:rounded-t-lg md:rounded-bl-none md:min-w-[20rem] md:h-48">
@@ -25,7 +25,10 @@ export function Card({ name, description, value, img }: ICardProps) {
             <strong>{formatPrice(value)}</strong>
           </span>
 
-          <button className="md:flex md:bg-green-500 md:w-full md:items-center md:justify-between md:rounded-lg md:p-2 md:mt-7">
+          <button
+            onClick={() => handleOnClick(id)}
+            className="md:flex md:bg-green-500 md:w-full md:items-center md:justify-between md:rounded-lg md:p-2 md:mt-7"
+          >
             <span className="hidden text-white md:block md:font-semibold md:w-full md:text-center md:text-xl">
               Adicionar
             </span>
