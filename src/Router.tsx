@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Cart } from './components/Cart';
-import { LunchesList } from './components/LunchesList';
+import { Cart } from './pages/Cart';
+import { LunchesList } from './pages/LunchesList';
 
 export function Router() {
   return (

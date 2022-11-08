@@ -2,15 +2,15 @@ import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { Root as DialogRoot } from '@radix-ui/react-dialog';
 import React, { useState } from 'react';
 
+import { Card } from '../components/Card';
+import { LunchModal } from '../components/LunchModal';
+import { SearchInput } from '../components/SearchInput';
 import { data } from '../services/api';
-import { Card } from './Card';
-import { LunchModal } from './LunchModal';
-import { SearchInput } from './SearchInput';
 
 export function LunchesList() {
   const [search, setSearch] = useState('');
 
-  const [lunchId, setLunchId] = useState<number>(-1);
+  const [lunchId, setLunchId] = useState<string>('');
 
   const [parent] = useAutoAnimate<HTMLUListElement>(/* optional config */);
 

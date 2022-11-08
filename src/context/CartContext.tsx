@@ -2,13 +2,19 @@ import { createContext, useState } from 'react';
 
 import { data } from '../services/api';
 
-interface Product {
-  id: number;
+export interface Product {
+  id: string;
   name: string;
   description: string;
   value: number;
   amount: number;
   img: string;
+  extra: Extra[];
+}
+
+export interface AddProductProps {
+  id: string;
+  amount: number;
   extra: Extra[];
 }
 
@@ -18,18 +24,13 @@ interface Extra {
   value: number;
 }
 
-export interface AddProductProps {
-  id: number;
-  amount: number;
-  extra: Extra[];
-}
-
 interface CartProviderProps {
   children: React.ReactNode;
 }
 
 export interface CartContextData {
   addProduct: (props: AddProductProps) => void;
+  cart: Product[];
 }
 
 export const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -86,5 +87,7 @@ export function CartProvider({ children }: CartProviderProps) {
     return;
   };
 
-  return <CartContext.Provider value={{ addProduct }}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={{ addProduct, cart }}>{children}</CartContext.Provider>
+  );
 }
