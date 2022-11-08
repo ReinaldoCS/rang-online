@@ -1,9 +1,9 @@
 import './index.css';
 
-import { Cart } from './Components/Cart';
-import { Footer } from './Components/Footer';
-import { Header } from './Components/Header';
-import { LunchesList } from './Components/LunchesList';
+import { Cart } from './components/Cart';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import { LunchesList } from './components/LunchesList';
 import { CartProvider } from './context/CartContext';
 
 export function App() {

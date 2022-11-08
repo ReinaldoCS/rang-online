@@ -9,6 +9,19 @@ interface Product {
   value: number;
   amount: number;
   img: string;
+  extra: Extra[];
+}
+
+interface Extra {
+  name: string;
+  amount: number;
+  value: number;
+}
+
+export interface AddProductProps {
+  id: number;
+  amount: number;
+  extra: Extra[];
 }
 
 interface CartProviderProps {
@@ -16,7 +29,7 @@ interface CartProviderProps {
 }
 
 export interface CartContextData {
-  addProduct: (id: number) => void;
+  addProduct: (props: AddProductProps) => void;
 }
 
 export const CartContext = createContext<CartContextData>({} as CartContextData);
@@ -32,14 +45,17 @@ export function CartProvider({ children }: CartProviderProps) {
     return [];
   });
 
-  const addProduct = (productId: number) => {
+  const addProduct = ({ id, amount, extra }: AddProductProps) => {
     // Verifica se o produto já esta no carrinho
-    const productAlreadyExists = cart.find((product) => product.id === productId);
+    const productAlreadyExists = cart.find((product) => product.id === id);
 
-    if (productAlreadyExists) {
+    if (
+      productAlreadyExists &&
+      JSON.stringify(productAlreadyExists.extra) === JSON.stringify(extra)
+    ) {
       const updatedAmountCartProduct = cart.map((product) => {
-        return product.id === productId
-          ? { ...product, amount: product.amount + 1 }
+        return product.id === id
+          ? { ...product, amount: product.amount + amount }
           : product;
       });
 
@@ -52,14 +68,14 @@ export function CartProvider({ children }: CartProviderProps) {
     }
 
     // verifica se o produto existe no "banco"
-    const productData = data.find((product) => product.id === productId);
+    const productData = data.find((product) => product.id === id);
 
     if (!productData) {
       alert('produto não contrado');
       return;
     }
 
-    const cartWithNewProduct = [...cart, { ...productData, amount: 1 }];
+    const cartWithNewProduct = [...cart, { ...productData, extra, amount }];
 
     setCart(cartWithNewProduct);
 

@@ -2,6 +2,8 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { Minus, NotePencil, Plus } from 'phosphor-react';
 import { useState } from 'react';
 
+import { AddProductProps } from '../../context/CartContext';
+import { useCart } from '../../hook/useCart';
 import { data } from '../../services/api';
 import { formatPrice } from '../../utils/formatValue';
 import { ExtraItem } from './ExtraItem';
@@ -24,6 +26,50 @@ export function LunchModal({ lunchId }: LunchModalProps) {
   const [sodaAmount, setSodaAmount] = useState(0);
 
   const [amount, setAmount] = useState(1);
+
+  const { addProduct } = useCart();
+
+  function handleOnConfirm() {
+    if (!lunch) {
+      return null;
+    }
+
+    const product: AddProductProps = {
+      id: lunch.id,
+      amount,
+      extra: [
+        {
+          name: 'Bacon - R$3,00',
+          value: 3,
+          amount: baconAmount,
+        },
+        {
+          name: 'Batata 250g - R$5,00',
+          value: 5,
+          amount: potatoAmount,
+        },
+        {
+          name: 'Molho branco - R$1,00',
+          value: 1,
+          amount: sauceAmount,
+        },
+        {
+          name: 'Refrigerante - R$5,00',
+          value: 5,
+          amount: sodaAmount,
+        },
+      ],
+    };
+
+    addProduct(product);
+
+    setBaconAmount(0);
+    setPotatoAmount(0);
+    setSauceAmount(0);
+    setSodaAmount(0);
+
+    setAmount(1);
+  }
 
   const total =
     (lunch.value +
@@ -95,7 +141,7 @@ export function LunchModal({ lunchId }: LunchModalProps) {
             </div>
 
             <button
-              // onClick={onClick}
+              onClick={handleOnConfirm}
               className="flex bg-green-500 w-full items-center justify-between rounded-lg p-2 mt-7"
             >
               <span className="text-white block font-semibold w-full text-center text-xl">
