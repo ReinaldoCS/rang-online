@@ -7,8 +7,12 @@ export function Cart() {
   const { cart } = useCart();
 
   const total = cart.reduce((sumTotal, product) => {
-    return (sumTotal += product.value * product.amount);
+    const totalExtra = product.extra.reduce((sumTotal, extra) => {
+      return (sumTotal += extra.value * extra.amount);
+    }, 0);
+    return (sumTotal += (product.value + totalExtra) * product.amount);
   }, 0);
+
   return (
     <main className="flex flex-col items-center justify-between h-full w-full my-8 lg:flex-row lg:justify-center lg:items-start">
       {cart.length > 0 ? (

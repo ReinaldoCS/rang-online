@@ -9,10 +9,16 @@ type ItemCart = Omit<Product, 'description' | 'id'>;
 export function ItemCart({ name, img, value, amount, extra, orderId }: ItemCart) {
   const { addAmount, removeProduct } = useCart();
 
+  const totalExtra = extra.reduce((sumTotal, extra) => {
+    return (sumTotal += extra.value * extra.amount);
+  }, 0);
+
+  const total = (value + totalExtra) * amount;
+
   return (
     <div className="relative bg-white flex items-start justify-start w-11/12 max-w-md p-4 rounded-lg">
       <span className="text-[#6C6C80] absolute bottom-4 right-4 md:text-2xl">
-        <strong>{formatPrice(value * amount)}</strong>
+        <strong>{formatPrice(total)}</strong>
       </span>
       <div className="flex items-center justify-center bg-orange-500 h-16 min-w-[4rem] p-2 rounded-lg">
         <img src={img} alt="Costelão" className="max-w-[90%] max-h-[90%]" />
