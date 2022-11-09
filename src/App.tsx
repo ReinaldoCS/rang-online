@@ -11,7 +11,7 @@ export function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <div className="w-screen h-screen flex flex-col flex-1">
+        <div className="w-[100%] h-screen flex flex-col flex-1">
           <Header />
           <Router />
           <Footer />
