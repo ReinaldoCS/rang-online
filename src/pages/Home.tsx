@@ -3,6 +3,7 @@ import { Root as DialogRoot } from '@radix-ui/react-dialog';
 import React, { useState } from 'react';
 
 import { Card } from '../components/Card';
+import { Empty } from '../components/Empty';
 import { LunchModal } from '../components/LunchModal';
 import { SearchInput } from '../components/SearchInput';
 import { data } from '../services/api';
@@ -29,25 +30,29 @@ export function LunchesList() {
     <section className="flex flex-col items-center justify-center">
       <SearchInput onChange={handleChangeSearch} value={search} />
 
-      <DialogRoot>
-        <ul
-          ref={parent}
-          className="flex flex-col items-center justify-center max-w-5xl mb-10 sm:grid sm:grid-cols-[20rem_repeat(auto-fill,_20rem)] sm:w-11/12 sm:gap-x-4 sm:gap-2 md:gap-8 md:my-16"
-        >
-          {filterLunches.map((lunch) => (
-            <Card
-              key={lunch.id}
-              name={lunch.name}
-              description={lunch.description}
-              value={lunch.value}
-              img={lunch.img}
-              onClick={() => setLunchId(lunch.id)}
-            />
-          ))}
-        </ul>
+      {filterLunches.length > 0 ? (
+        <DialogRoot>
+          <ul
+            ref={parent}
+            className="flex flex-col items-center justify-center max-w-5xl mb-10 sm:grid sm:grid-cols-[20rem_repeat(auto-fill,_20rem)] sm:w-11/12 sm:gap-x-4 sm:gap-2 md:gap-8 md:my-16"
+          >
+            {filterLunches.map((lunch) => (
+              <Card
+                key={lunch.id}
+                name={lunch.name}
+                description={lunch.description}
+                value={lunch.value}
+                img={lunch.img}
+                onClick={() => setLunchId(lunch.id)}
+              />
+            ))}
+          </ul>
 
-        <LunchModal lunchId={lunchId} />
-      </DialogRoot>
+          <LunchModal lunchId={lunchId} />
+        </DialogRoot>
+      ) : (
+        <Empty text="Nenhum lanche encontrado" />
+      )}
     </section>
   );
 }

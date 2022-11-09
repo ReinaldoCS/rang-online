@@ -1,9 +1,11 @@
 import { createContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import { data } from '../services/api';
 
 export interface Product {
   id: string;
+  orderId: string;
   name: string;
   description: string;
   value: number;
@@ -30,6 +32,8 @@ interface CartProviderProps {
 
 export interface CartContextData {
   addProduct: (props: AddProductProps) => void;
+  addAmount: (orderId: string) => void;
+  removeProduct: (orderId: string) => void;
   cart: Product[];
 }
 
@@ -76,7 +80,10 @@ export function CartProvider({ children }: CartProviderProps) {
       return;
     }
 
-    const cartWithNewProduct = [...cart, { ...productData, extra, amount }];
+    const cartWithNewProduct = [
+      ...cart,
+      { ...productData, extra, amount, orderId: uuidv4() },
+    ];
 
     setCart(cartWithNewProduct);
 
@@ -87,7 +94,49 @@ export function CartProvider({ children }: CartProviderProps) {
     return;
   };
 
+  const addAmount = (orderId: string) => {
+    // const order = cart.find((product) => product.orderId === orderId);
+
+    const updatedAmountOrder = cart.map((product) => {
+      return product.orderId === orderId
+        ? { ...product, amount: product.amount + 1 }
+        : product;
+    });
+
+    setCart(updatedAmountOrder);
+
+    localStorage.setItem('@RangoOnline:cart', JSON.stringify(updatedAmountOrder));
+  };
+
+  const removeProduct = (orderId: string) => {
+    const order = cart.find((product) => product.orderId === orderId);
+
+    if (!order) {
+      return;
+    }
+
+    if (order.amount > 1) {
+      const updatedAmountOrder = cart.map((product) => {
+        return product.orderId === orderId
+          ? { ...product, amount: product.amount - 1 }
+          : product;
+      });
+      setCart(updatedAmountOrder);
+
+      localStorage.setItem('@RangoOnline:cart', JSON.stringify(updatedAmountOrder));
+
+      return;
+    }
+
+    const filteredCart = cart.filter((order) => order.orderId !== orderId);
+
+    setCart(filteredCart);
+    localStorage.setItem('@RangoOnline:cart', JSON.stringify(filteredCart));
+  };
+
   return (
-    <CartContext.Provider value={{ addProduct, cart }}>{children}</CartContext.Provider>
+    <CartContext.Provider value={{ addProduct, addAmount, removeProduct, cart }}>
+      {children}
+    </CartContext.Provider>
   );
 }

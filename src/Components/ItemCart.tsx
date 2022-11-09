@@ -1,14 +1,17 @@
 import { MinusCircle, PlusCircle } from 'phosphor-react';
 
 import { Product } from '../context/CartContext';
+import { useCart } from '../hook/useCart';
 import { formatPrice } from '../utils/formatValue';
 
 type ItemCart = Omit<Product, 'description' | 'id'>;
 
-export function ItemCart({ name, img, value, amount, extra }: ItemCart) {
+export function ItemCart({ name, img, value, amount, extra, orderId }: ItemCart) {
+  const { addAmount, removeProduct } = useCart();
+
   return (
     <div className="relative bg-white flex items-start justify-start w-11/12 max-w-md p-4 rounded-lg">
-      <span className="text-green-500 absolute bottom-4 right-4 md:text-2xl">
+      <span className="text-[#6C6C80] absolute bottom-4 right-4 md:text-2xl">
         <strong>{formatPrice(value * amount)}</strong>
       </span>
       <div className="flex items-center justify-center bg-orange-500 h-16 min-w-[4rem] p-2 rounded-lg">
@@ -31,12 +34,12 @@ export function ItemCart({ name, img, value, amount, extra }: ItemCart) {
       </div>
 
       <div className="flex flex-col text-gray-text items-center justify-between mb-8 md:mb-10">
-        <button>
+        <button onClick={() => removeProduct(orderId)}>
           <MinusCircle size={32} />
         </button>
         <input type="text" readOnly value={amount} className="w-8 text-center" />
 
-        <button>
+        <button onClick={() => addAmount(orderId)}>
           <PlusCircle size={32} />
         </button>
       </div>

@@ -140,7 +140,7 @@ export function LunchModal({ lunchId }: LunchModalProps) {
               </div>
             </div>
 
-            <button
+            <Dialog.Close
               onClick={handleOnConfirm}
               className="flex bg-green-500 w-full items-center justify-between rounded-lg p-2 mt-7"
             >
@@ -150,7 +150,7 @@ export function LunchModal({ lunchId }: LunchModalProps) {
               <div className="flex items-center justify-center bg-green-500 rounded p-1 md:bg-[#3CC73C]">
                 <NotePencil weight="bold" className="text-white text-base" />
               </div>
-            </button>
+            </Dialog.Close>
           </div>
         </div>
       </Dialog.Content>
