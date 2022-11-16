@@ -1,4 +1,4 @@
-import './index.css';
+// import './index.css';
 
 import { BrowserRouter } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { CartProvider } from './context/CartContext';
 import { Router } from './Router';
+import GlobalStyle from './styles/global';
 
 export function App() {
   return (
@@ -17,6 +18,8 @@ export function App() {
           <Footer />
         </div>
       </BrowserRouter>
+
+      <GlobalStyle />
     </CartProvider>
   );
 }
