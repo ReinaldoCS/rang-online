@@ -66,26 +66,4 @@ body, input, button {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
-
-html {
-  font-size: 16px;
-}
-
-@media only screen and (min-width: 720px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (min-width: 1240px) {
-  html {
-    font-size: 24px;
-  }
-}
 `;
