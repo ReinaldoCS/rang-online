@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <img alt="Rango" title="Rango" src="./.github/logo.svg" />
 </h1>
@@ -8,15 +7,14 @@
 </p>
 > Status do Projeto: :heavy_check_mark: concluido
 
-### Tópicos
+
+### 📝 Tópicos
 
 :small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
 
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
-:small_blue_diamond: [Layout e Deploy da Aplicação](#layout-e-deploy-da-aplicação-:dash:)
-
-:small_blue_diamond: [Deploy da Aplicação]()
+:small_blue_diamond: [Layout e Deploy da Aplicação](#layout-e-deploy-da-aplicação-dash)
 
 :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
@@ -26,13 +24,13 @@
 
 Insira os tópicos do README em links para facilitar a navegação do leitor
 
-## Descrição do projeto
+## 📝 Descrição do projeto
 
 <p align="justify">
   Descrição breve do projeto compondo um paragrafo ou dois.
 </p>
 
-## Funcionalidades
+## 🎯 Funcionalidades
 
 :heavy_check_mark: Listar todos os lanches
 
@@ -44,26 +42,26 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 :heavy_check_mark: Exibir soma total do carrinho
 
-## Layout e Deploy da Aplicação :dash:
+## 💻 Layout e Deploy da Aplicação :dash:
 
 > Vercel: https://rango-online.vercel.app
 >
 > Figma: https://www.figma.com/file/szfqw4BqKjrM9vjt7f1274/RANGONLINE?node-id=0%3A1&t=oHiSqDDhhnF04n9h-1
 
+## ⚠️ Pré-requisitos
 
-## Pré-requisitos
+⚠️ [Node](https://nodejs.org/en/download/)
 
-:warning: [Node](https://nodejs.org/en/download/)
-
-
-## :arrow_forward: Como rodar a aplicação
+## ▶️ Como rodar a aplicação
 
 No terminal, clone o projeto:
+
 ```sh
 git clone https://github.com/ReinaldoCS/rang-online.git
 ```
 
 Ainda no terminal instale as dependencias do projeto:
+
 ```sh
 yarn install
 
@@ -73,6 +71,7 @@ npm install
 ```
 
 Por ultimo rode o projeto:
+
 ```sh
 yarn dev
 
@@ -81,14 +80,13 @@ yarn dev
 npm dev
 ```
 
-
-## Casos de Uso
+## ❔ Casos de Uso
 
 Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso de **gifs** aqui seria bem interessante.
 
 Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente neste tópico os dados necessários para acessá-la.
 
-## :books: Linguagens, dependencias e libs utilizadas
+## 📚 Linguagens, dependencias e libs utilizadas
 
 - [React](https://pt-br.reactjs.org)
 - [Tailwind CSS](https://tailwindcss.com)
@@ -104,5 +102,4 @@ Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente n
 Liste o time responsável pelo desenvolvimento do projeto
 
 | [<img src="https://avatars.githubusercontent.com/u/61064330?v=4" width=115><br><sub>Reinaldo Correia</sub>](https://github.com/ReinaldoCS) |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-
+| :----------------------------------------------------------------------------------------------------------------------------------------: |
