@@ -21,17 +21,10 @@
 
 :small_blue_diamond: [❔ Casos de Uso](#-casos-de-uso)
 
-
 :small_blue_diamond: [📚 Linguagens, dependencias e libs utilizadas](#-linguagens-dependencias-e-libs-utilizadas)
-
 
 :small_blue_diamond: [:octocat: Desenvolvedores/Contribuintes](#octocat-desenvolvedorescontribuintes)
 
-
-
-...
-
-Insira os tópicos do README em links para facilitar a navegação do leitor
 
 ## 📝 Descrição do projeto
 
