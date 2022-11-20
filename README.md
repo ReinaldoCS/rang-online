@@ -1,13 +1,12 @@
-<h1>Titulo ou Arte do Projeto</h1>
+
+<h1 align="center">
+  <img alt="Rango" title="Rango" src="./.github/logo.svg" />
+</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=react&message=framework&color=blue&style=for-the-badge&logo=react"/>
-
-  <img src="https://img.shields.io/static/v1?label=talwindcss&message=style&color=06B6D4&style=for-the-badge&logo=Tailwind CSS"/>
-
+  <img alt="Mockup" src=".github/mockup.png" width="100%">
 </p>
-
-> Status do Projeto: :heavy_check_mark: :warning: (concluido, em desenvolvimento, etc)
+> Status do Projeto: :heavy_check_mark: concluido
 
 ### Tópicos
 
@@ -15,7 +14,9 @@
 
 :small_blue_diamond: [Funcionalidades](#funcionalidades)
 
-:small_blue_diamond: [Deploy da Aplicação](#deploy-da-aplicação-dash)
+:small_blue_diamond: [Layout e Deploy da Aplicação](#layout-e-deploy-da-aplicação-:dash:)
+
+:small_blue_diamond: [Deploy da Aplicação]()
 
 :small_blue_diamond: [Pré-requisitos](#pré-requisitos)
 
@@ -33,49 +34,53 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 ## Funcionalidades
 
-:heavy_check_mark: Funcionalidade 1
+:heavy_check_mark: Listar todos os lanches
 
-:heavy_check_mark: Funcionalidade 2
+:heavy_check_mark: Pesquisar lanches por nome ou descrição
 
-:heavy_check_mark: Funcionalidade 3
+:heavy_check_mark: Adicionar lanche e adiconais ao carrinho
 
-:heavy_check_mark: Funcionalidade 4
+:heavy_check_mark: Listar carrinho e adicionais
 
-## Layout ou Deploy da Aplicação :dash:
+:heavy_check_mark: Exibir soma total do carrinho
 
-> Link do deploy da aplicação. Exemplo com netlify: https://certificates-for-everyone-womakerscode.netlify.app/
+## Layout e Deploy da Aplicação :dash:
 
-...
+> Vercel: https://rango-online.vercel.app
+>
+> Figma: https://www.figma.com/file/szfqw4BqKjrM9vjt7f1274/RANGONLINE?node-id=0%3A1&t=oHiSqDDhhnF04n9h-1
 
-Se ainda não houver deploy, insira capturas de tela da aplicação ou gifs
 
 ## Pré-requisitos
 
 :warning: [Node](https://nodejs.org/en/download/)
 
-...
 
-Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação
-
-## Como rodar a aplicação :arrow_forward:
+## :arrow_forward: Como rodar a aplicação
 
 No terminal, clone o projeto:
-
+```sh
+git clone https://github.com/ReinaldoCS/rang-online.git
 ```
-git clone https://github.com/React-Bootcamp-WoMarkersCode/certificate-generator
+
+Ainda no terminal instale as dependencias do projeto:
+```sh
+yarn install
+
+## ou
+
+npm install
 ```
 
-...
+Por ultimo rode o projeto:
+```sh
+yarn dev
 
-Coloque um passo a passo para rodar a sua aplicação. **Dica: clone o próprio projeto e verfique se o passo a passo funciona**
+## ou
 
-## Como rodar os testes
-
-Coloque um passo a passo para executar os testes
-
+npm dev
 ```
-$ npm test, rspec, etc
-```
+
 
 ## Casos de Uso
 
@@ -83,54 +88,21 @@ Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso d
 
 Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente neste tópico os dados necessários para acessá-la.
 
-## JSON :floppy_disk:
+## :books: Linguagens, dependencias e libs utilizadas
 
-### Usuários:
+- [React](https://pt-br.reactjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Radix UI](https://www.radix-ui.com)
+- [Phosphor Icons](https://phosphoricons.com)
+- [Vite JS](https://vitejs.dev)
+- [Typescript](https://www.typescriptlang.org)
+- [ESLint](https://eslint.org)
+- [Prettier](https://prettier.io)
 
-| name      | email                  | password | token | avatar                                                                                                              |
-| --------- | ---------------------- | -------- | ----- | ------------------------------------------------------------------------------------------------------------------- |
-| Lais Lima | laislima98@hotmail.com | lais123  | true  | https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-U_HbQAipum9lWln3APcBIwng7T46hdBA42EJv8Hf6Z4fDT3&usqp=CAU |
-
-...
-
-Se quiser, coloque uma amostra do banco de dados
-
-## Iniciando/Configurando banco de dados
-
-Se for necessário configurar algo antes de iniciar o banco de dados insira os comandos a serem executados
-
-## Linguagens, dependencias e libs utilizadas :books:
-
-- [React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
-- [React PDF](https://react-pdf.org/)
-
-...
-
-Liste as tecnologias utilizadas no projeto que **não** forem reconhecidas pelo Github
-
-## Resolvendo Problemas :exclamation:
-
-Em [issues]() foram abertos alguns problemas gerados durante o desenvolvimento desse projeto e como foram resolvidos.
-
-## Tarefas em aberto
-
-Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementadas na sua aplicação
-
-:memo: Tarefa 1
-
-:memo: Tarefa 2
-
-:memo: Tarefa 3
-
-## Desenvolvedores/Contribuintes :octocat:
+## :octocat: Desenvolvedores/Contribuintes
 
 Liste o time responsável pelo desenvolvimento do projeto
 
-| [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) | [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) | [<img src="https://avatars2.githubusercontent.com/u/46378210?s=400&u=071f7791bb03f8e102d835bdb9c2f0d3d24e8a34&v=4" width=115><br><sub>Diana Regina</sub>](https://github.com/Diana-ops) |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars.githubusercontent.com/u/61064330?v=4" width=115><br><sub>Reinaldo Correia</sub>](https://github.com/ReinaldoCS) |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
-## Licença
-
-The [MIT License]() (MIT)
-
-Copyright :copyright: Ano - Titulo do Projeto
