@@ -7,18 +7,27 @@
 </p>
 > Status do Projeto: :heavy_check_mark: concluido
 
-
 ### 📝 Tópicos
 
-:small_blue_diamond: [Descrição do projeto](#descrição-do-projeto)
+:small_blue_diamond: [📝 Descrição do projeto](#-descrição-do-projeto)
 
-:small_blue_diamond: [Funcionalidades](#funcionalidades)
+:small_blue_diamond: [🎯 Funcionalidades](#-funcionalidades)
 
-:small_blue_diamond: [Layout e Deploy da Aplicação](#layout-e-deploy-da-aplicação-dash)
+:small_blue_diamond: [💻 Layout e Deploy da Aplicação](#-layout-e-deploy-da-aplicação-dash)
 
-:small_blue_diamond: [Pré-requisitos](#pré-requisitos)
+:small_blue_diamond: [⚠️ Pré-requisitos](#️-pré-requisitos)
 
-:small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
+:small_blue_diamond: [▶️ Como rodar a aplicação](#️-como-rodar-a-aplicação)
+
+:small_blue_diamond: [❔ Casos de Uso](#-casos-de-uso)
+
+
+:small_blue_diamond: [📚 Linguagens, dependencias e libs utilizadas](#-linguagens-dependencias-e-libs-utilizadas)
+
+
+:small_blue_diamond: [:octocat: Desenvolvedores/Contribuintes](#octocat-desenvolvedorescontribuintes)
+
+
 
 ...
 
@@ -42,7 +51,7 @@ Insira os tópicos do README em links para facilitar a navegação do leitor
 
 :heavy_check_mark: Exibir soma total do carrinho
 
-## 💻 Layout e Deploy da Aplicação :dash:
+## 💻 Layout e Deploy da Aplicação
 
 > Vercel: https://rango-online.vercel.app
 >
