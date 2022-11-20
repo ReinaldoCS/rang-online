@@ -8,6 +8,7 @@ import { data } from '../../services/api';
 import { formatPrice } from '../../utils/formatValue';
 import { ExtraItem } from './ExtraItem';
 import { LunchInfo } from './LunchInfo';
+import { Container, Content } from './styles';
 
 interface LunchModalProps {
   lunchId: string;
@@ -81,8 +82,8 @@ export function LunchModal({ lunchId }: LunchModalProps) {
 
   return (
     <Dialog.Portal>
-      <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
-      <Dialog.Content className="fixed bottom-0 bg-white w-full max-w-3xl h-[90%] rounded-t-3xl text-gray-text flex justify-center py-8 sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-11/12 sm:rounded-lg md:min-h-fit md:h-auto">
+      <Container />
+      <Content className="sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-11/12 sm:rounded-lg md:min-h-fit md:h-auto">
         <div className="w-11/12 overflow-y-auto md:flex md:items-start md:justify-between md:overflow-y-hidden">
           <div className="md:w-1/2 md:mr-4">
             <LunchInfo
@@ -153,7 +154,7 @@ export function LunchModal({ lunchId }: LunchModalProps) {
             </Dialog.Close>
           </div>
         </div>
-      </Dialog.Content>
+      </Content>
     </Dialog.Portal>
   );
 }
