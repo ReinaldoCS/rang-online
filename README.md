@@ -19,8 +19,6 @@
 
 :small_blue_diamond: [▶️ Como rodar a aplicação](#️-como-rodar-a-aplicação)
 
-:small_blue_diamond: [❔ Casos de Uso](#-casos-de-uso)
-
 :small_blue_diamond: [📚 Linguagens, dependencias e libs utilizadas](#-linguagens-dependencias-e-libs-utilizadas)
 
 :small_blue_diamond: [:octocat: Desenvolvedores/Contribuintes](#octocat-desenvolvedorescontribuintes)
@@ -80,7 +78,6 @@ yarn dev
 
 npm dev
 ```
-
 
 ## 📚 Linguagens, dependencias e libs utilizadas
 
