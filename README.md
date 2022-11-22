@@ -28,7 +28,7 @@
 ## 📝 Descrição do projeto
 
 <p align="justify">
-  Descrição breve do projeto compondo um paragrafo ou dois.
+  O projeto tem como objetivo ser um site de fast food com opções de lanches fáceis e rápidos para o usuário escolher.
 </p>
 
 ## 🎯 Funcionalidades
@@ -81,11 +81,6 @@ yarn dev
 npm dev
 ```
 
-## ❔ Casos de Uso
-
-Explique com mais detalhes como a sua aplicação poderia ser utilizada. O uso de **gifs** aqui seria bem interessante.
-
-Exemplo: Caso a sua aplicação tenha alguma funcionalidade de login apresente neste tópico os dados necessários para acessá-la.
 
 ## 📚 Linguagens, dependencias e libs utilizadas
 
